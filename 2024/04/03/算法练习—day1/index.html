@@ -12,20 +12,20 @@
     
     <meta name="keywords" content="算法" />
     
-    <meta name="description" content="704. 二分查找题目：">
+    <meta name="description" content="704. 二分查找题目：  题目分析： 左右指针分别为[left,right]，每次都取中间元素和目标值比较，再移动左右指针即可 注意： (1) [left,right]是闭区间，在边界条件下mid可以取值为left或者right (2) 循环时的判断条件为 while(left&lt;&#x3D;right)，这里’&#x3D;’符号不可丢 (3) 为了防止数据多大，mid&#x3D;left+">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法练习—day1">
 <meta property="og:url" content="https://red568.github.io/2024/04/03/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E2%80%94day1/index.html">
 <meta property="og:site_name" content="Red">
-<meta property="og:description" content="704. 二分查找题目：">
+<meta property="og:description" content="704. 二分查找题目：  题目分析： 左右指针分别为[left,right]，每次都取中间元素和目标值比较，再移动左右指针即可 注意： (1) [left,right]是闭区间，在边界条件下mid可以取值为left或者right (2) 循环时的判断条件为 while(left&lt;&#x3D;right)，这里’&#x3D;’符号不可丢 (3) 为了防止数据多大，mid&#x3D;left+">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="c:\Users\red\AppData\Roaming\Typora\typora-user-images\image-20240403215432960.png">
+<meta property="og:image" content="https://red568.github.io/2024/04/03/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E2%80%94day1/01.jpg">
 <meta property="article:published_time" content="2024-04-03T13:49:55.000Z">
-<meta property="article:modified_time" content="2024-04-03T13:54:39.889Z">
+<meta property="article:modified_time" content="2024-04-03T14:24:14.837Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:\Users\red\AppData\Roaming\Typora\typora-user-images\image-20240403215432960.png">
+<meta name="twitter:image" content="https://red568.github.io/2024/04/03/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E2%80%94day1/01.jpg">
     
 
     
@@ -182,7 +182,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2024/04/03/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E2%80%94day1/" class="article-date">
-     <time datetime="2024-04-03T13:54:39.889Z" itemprop="dateModified">2024-04-03</time>
+     <time datetime="2024-04-03T14:24:14.837Z" itemprop="dateModified">2024-04-03</time>
   </a>
 </div>
 
@@ -201,7 +201,7 @@
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">7</span>
+      <span class="post-count">240</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
       <span class="post-count">1 分钟 </span>
@@ -218,8 +218,25 @@
 
             
 
-            <h1 id="704-二分查找"><a href="#704-二分查找" class="headerlink" title="704. 二分查找"></a>704. 二分查找</h1><p>题目：</p>
-<p><img src="C:\Users\red\AppData\Roaming\Typora\typora-user-images\image-20240403215432960.png" alt="image-20240403215432960"></p>
+            <h1 id="704-二分查找"><a href="#704-二分查找" class="headerlink" title="704. 二分查找"></a>704. 二分查找</h1><p><strong>题目：</strong></p>
+<p><img src="/2024/04/03/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E2%80%94day1/01.jpg" alt="图片展示失败"></p>
+<p><strong>题目分析：</strong></p>
+<p>左右指针分别为[left,right]，每次都取中间元素和目标值比较，再移动左右指针即可</p>
+<p><strong>注意：</strong></p>
+<p>(1) [left,right]是闭区间，在边界条件下mid可以取值为left或者right</p>
+<p>(2) 循环时的判断条件为 while(left&lt;&#x3D;right)，这里’&#x3D;’符号不可丢</p>
+<p>(3) 为了防止数据多大，mid&#x3D;left+(right-left)&#x2F;2;</p>
+<p>(4) 二分法不仅可以用来查找值，还可以用来查值范围、用法很灵活，可以写个专题，这里留个坑之后填</p>
+<p><strong>代码：</strong></p>
+<p><img src="/2024/04/03/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E2%80%94day1/Snipaste_2024-04-03_22-16-56.png"></p>
+<h1 id="27-移除元素"><a href="#27-移除元素" class="headerlink" title="27. 移除元素"></a>27. 移除元素</h1><p><strong>题目：</strong></p>
+<p><img src="/2024/04/03/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E2%80%94day1/Snipaste_2024-04-03_22-19-49.png"></p>
+<p><strong>题目分析：</strong></p>
+<p>双指针法，用left记录留下值的数组末尾的下一位，也是新值将要插入的位置；right遍历值，如果指向值等于val则不做操作，指向值不等于val，则将该值赋值给left</p>
+<p><strong>注：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/move-zeroes/">283. 移动零</a> 和这道题的解题思路类似</p>
+<p>代码：</p>
+<p><img src="/2024/04/03/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E2%80%94day1/Snipaste_2024-04-03_22-23-54.png"></p>
 
         </div>
         <footer class="article-footer">
@@ -298,7 +315,7 @@
             "name": "John Doe"
         },
         "headline": "算法练习—day1",
-        "image": "https://red568.github.ioC:\Users\red\AppData\Roaming\Typora\typora-user-images\image-20240403215432960.png",
+        "image": "https://red568.github.io/2024/04/03/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E2%80%94day1/01.jpg",
         "keywords": "算法",
         "genre": "LeetCode",
         "datePublished": "2024-04-03",
@@ -307,8 +324,13 @@
         "url": "https://red568.github.io/2024/04/03/算法练习—day1/",
         "description": "704. 二分查找题目：
 
-",
-        "wordCount": 9
+题目分析：
+左右指针分别为[left,right]，每次都取中间元素和目标值比较，再移动左右指针即可
+注意：
+(1) [left,right]是闭区间，在边界条件下mid可以取值为left或者right
+(2) 循环时的判断条件为 while(left&lt;&#x3D;right)，这里’&#x3D;’符号不可丢
+(3) 为了防止数据多大，mid&#x3D;left+",
+        "wordCount": 26
     }
 </script>
 
@@ -409,7 +431,7 @@
                             <a href="/2024/04/03/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E2%80%94day1/" class="thumbnail">
     
     
-        <span style="background-image:url(C:\Users\red\AppData\Roaming\Typora\typora-user-images\image-20240403215432960.png)" alt="算法练习—day1" class="thumbnail-image"></span>
+        <span style="background-image:url(/2024/04/03/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E2%80%94day1/01.jpg)" alt="算法练习—day1" class="thumbnail-image"></span>
     
     
 </a>
