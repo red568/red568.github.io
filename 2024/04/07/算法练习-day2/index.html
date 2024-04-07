@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>算法练习--day2 | Red</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="算法" />
+    
+    <meta name="description" content="977.有序数组的平方题目：  分析： 最大值一定出现在两端，用双指针分别指向首尾两端，取平方的最大值放入新数组中最后倒序一下即可(或者直接倒序存入新数组也行) 1234567891011121314151617181920212223242526class Solution &amp;#123;    public int[] sortedSquares(int[] nums) &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法练习--day2">
+<meta property="og:url" content="https://red568.github.io/2024/04/07/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day2/index.html">
+<meta property="og:site_name" content="Red">
+<meta property="og:description" content="977.有序数组的平方题目：  分析： 最大值一定出现在两端，用双指针分别指向首尾两端，取平方的最大值放入新数组中最后倒序一下即可(或者直接倒序存入新数组也行) 1234567891011121314151617181920212223242526class Solution &amp;#123;    public int[] sortedSquares(int[] nums) &amp;#123;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://red568.github.io/2024/04/07/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day2/Snipaste_2024-04-07_16-16-16.png">
+<meta property="article:published_time" content="2024-04-07T07:57:37.000Z">
+<meta property="article:modified_time" content="2024-04-07T08:18:31.099Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://red568.github.io/2024/04/07/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day2/Snipaste_2024-04-07_16-16-16.png">
+    
+
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/LeetCode/">LeetCode</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/LeetCode/">LeetCode</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-算法练习-day2" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        算法练习--day2
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2024/04/07/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day2/" class="article-date">
+       <time datetime="2024-04-07T07:57:37.000Z" itemprop="datePublished">2024-04-07</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2024/04/07/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day2/" class="article-date">
+     <time datetime="2024-04-07T08:18:31.099Z" itemprop="dateModified">2024-04-07</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
+    </div>
+
+                
+
+                
+   <div class="article-counter">
+      <i class="fa fa-file-word-o"></i>
+      <span class="post-count-item-text">本文字数: </span>
+      <span class="post-count">798</span>
+      <i class="fa fa-clock-o"></i>
+      <span class="post-time-item-text">阅读时长: </span>
+      <span class="post-count">3 分钟 </span>
+   </div>
+
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h1 id="977-有序数组的平方"><a href="#977-有序数组的平方" class="headerlink" title="977.有序数组的平方"></a>977.有序数组的平方</h1><p><strong>题目：</strong></p>
+<p><img src="/2024/04/07/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day2/Snipaste_2024-04-07_16-16-16.png"></p>
+<p><strong>分析：</strong></p>
+<p>最大值一定出现在两端，用双指针分别指向首尾两端，取平方的最大值放入新数组中最后倒序一下即可(或者直接倒序存入新数组也行)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] sortedSquares(<span class="type">int</span>[] nums) &#123;</span><br><span class="line">        <span class="type">int</span> left=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> right=nums.length-<span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span>[] newNums=<span class="keyword">new</span> <span class="title class_">int</span>[nums.length];</span><br><span class="line">        <span class="type">int</span>[] temp=<span class="keyword">new</span> <span class="title class_">int</span>[nums.length];</span><br><span class="line">        <span class="type">int</span> idx=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(left&lt;=right)&#123;</span><br><span class="line">            <span class="type">int</span> a=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(nums[left]*nums[left]&gt;=nums[right]*nums[right])&#123;</span><br><span class="line">                a=nums[left]*nums[left];</span><br><span class="line">                left++;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                a=nums[right]*nums[right];</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">            temp[idx]=a;</span><br><span class="line">            idx++;</span><br><span class="line">        &#125;</span><br><span class="line">        idx=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=temp.length-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">            newNums[idx++]=temp[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> newNums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="209-长度最小的子数组"><a href="#209-长度最小的子数组" class="headerlink" title="209.长度最小的子数组"></a>209.长度最小的子数组</h1><p><strong>题目：</strong></p>
+<p><img src="/2024/04/07/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day2/Snipaste_2024-04-07_16-08-59.png"></p>
+<p><strong>分析：</strong></p>
+<p>滑动窗口解决</p>
+<p>（1）向右移动右指针直到窗口中的数值和&gt;&#x3D;target</p>
+<p>（2）再向右移动左指针直到窗口中的数值和不满足&gt;&#x3D;target</p>
+<p>重复(1)(2)过程，直到右指针到达数值末尾，最终结果取最短窗口长度即可</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;<span class="comment">// 滑动窗口</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">minSubArrayLen</span><span class="params">(<span class="type">int</span> s, <span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;<span class="comment">//开始指针</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> Integer.MAX_VALUE;<span class="comment">//result记录子序列长度</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> <span class="number">0</span>; right &lt; nums.length; right++) &#123;<span class="comment">//right是终止指针</span></span><br><span class="line">            sum += nums[right];</span><br><span class="line">            <span class="keyword">while</span> (sum &gt;= s) &#123;</span><br><span class="line">                result = Math.min(result, right - left + <span class="number">1</span>);</span><br><span class="line">                sum -= nums[left++];<span class="comment">//left指针向右移动</span></span><br><span class="line">             &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">return</span> result == Integer.MAX_VALUE ? <span class="number">0</span> : result;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="59-螺旋矩阵II"><a href="#59-螺旋矩阵II" class="headerlink" title="59.螺旋矩阵II"></a>59.螺旋矩阵II</h1><p><strong>题目：</strong></p>
+<p><img src="/2024/04/07/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day2/Snipaste_2024-04-07_15-59-49.png"></p>
+<p><strong>分析：</strong></p>
+<p><strong>方法1：由外向内，一圈一圈的向内循环，一共n&#x2F;2圈</strong></p>
+<ul>
+<li><p>填充上行从左到右</p>
+</li>
+<li><p>填充右列从上到下</p>
+</li>
+<li><p>填充下行从右到左</p>
+</li>
+<li><p>填充左列从下到上</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[][] generateMatrix(<span class="type">int</span> n) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">loop</span> <span class="operator">=</span> <span class="number">0</span>;  <span class="comment">// 控制循环次数</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;  <span class="comment">// 每次循环的开始点(start, start)，每经过一圈循环，向内部移动一下</span></span><br><span class="line">        <span class="type">int</span>[][] res = <span class="keyword">new</span> <span class="title class_">int</span>[n][n];</span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">1</span>;  <span class="comment">// 定义填充数字</span></span><br><span class="line">        <span class="type">int</span> i, j;</span><br><span class="line">        <span class="comment">//1.填写外围数字</span></span><br><span class="line">        <span class="keyword">while</span> (loop++ &lt; n / <span class="number">2</span>) &#123;<span class="comment">//一共有n/2个圆（循环）</span></span><br><span class="line">            <span class="comment">// 判断边界后，loop从1开始</span></span><br><span class="line">            <span class="comment">//左闭右开</span></span><br><span class="line">            <span class="comment">// 1.1 模拟上侧从左到右，j变化</span></span><br><span class="line">            <span class="keyword">for</span> (j = start; j &lt; n - loop; j++) &#123;</span><br><span class="line">                res[start][j] = count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 1.2 模拟右侧从上到下,i变化</span></span><br><span class="line">            <span class="keyword">for</span> (i = start; i &lt; n - loop; i++) &#123;</span><br><span class="line">                res[i][j] = count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//1.3 模拟下侧从右到左，j变化</span></span><br><span class="line">            <span class="keyword">for</span> (; j &gt;= loop; j--) &#123;</span><br><span class="line">                res[i][j] = count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 1.4 模拟左侧从下到上，i变化</span></span><br><span class="line">            <span class="keyword">for</span> (; i &gt;= loop; i--) &#123;</span><br><span class="line">                res[i][j] = count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//移动循环起始点</span></span><br><span class="line">            start++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//2.填写最中心那个数字</span></span><br><span class="line">        <span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">            res[start][start] = count;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>方法2：设置边界值，每次迭代完后移动边界值</strong></p>
+<p>此题的解题思路可参考： <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/spiral-matrix/">54. 螺旋矩阵</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[][] generateMatrix(<span class="type">int</span> n) &#123;</span><br><span class="line">       <span class="type">int</span> l=<span class="number">0</span>;</span><br><span class="line">       <span class="type">int</span> r=n-<span class="number">1</span>;</span><br><span class="line">       <span class="type">int</span> t=<span class="number">0</span>;</span><br><span class="line">       <span class="type">int</span> b=n-<span class="number">1</span>;</span><br><span class="line">       <span class="type">int</span>[][] res=<span class="keyword">new</span> <span class="title class_">int</span>[n][n];</span><br><span class="line">       <span class="type">int</span> count=<span class="number">1</span>;</span><br><span class="line">       <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="comment">//上侧</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=l;i&lt;=r;i++)&#123;</span><br><span class="line">                res[t][i]=count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(++t&gt;b)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">//右侧</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=t;i&lt;=b;i++)&#123;</span><br><span class="line">                res[i][r]=count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(--r&lt;l)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">//下侧</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=r;i&gt;=l;i-- )&#123;</span><br><span class="line">                res[b][i]=count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(--b&lt;t)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">//左侧</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=b;i&gt;=t;i--)&#123;</span><br><span class="line">                res[i][l]=count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(++l&gt;r)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://red568.github.io/2024/04/07/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day2/" data-id="clup950gk00007gv5apj8f2fv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "John Doe"
+        },
+        "headline": "算法练习--day2",
+        "image": "https://red568.github.io/2024/04/07/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day2/Snipaste_2024-04-07_16-16-16.png",
+        "keywords": "算法",
+        "genre": "LeetCode",
+        "datePublished": "2024-04-07",
+        "dateCreated": "2024-04-07",
+        "dateModified": "2024-04-07",
+        "url": "https://red568.github.io/2024/04/07/算法练习-day2/",
+        "description": "977.有序数组的平方题目：
+
+分析：
+最大值一定出现在两端，用双指针分别指向首尾两端，取平方的最大值放入新数组中最后倒序一下即可(或者直接倒序存入新数组也行)
+1234567891011121314151617181920212223242526class Solution &#123;    public int[] sortedSquares(int[] nums) &#123;      ",
+        "wordCount": 1734
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/red568" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-stack-overflow"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2024/04/03/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E2%80%94day1/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">算法练习—day1</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2024/04/07/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day2/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2024/04/07/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day2/Snipaste_2024-04-07_16-16-16.png)" alt="算法练习--day2" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/LeetCode/">LeetCode</a></p>
+                            <p class="item-title"><a href="/2024/04/07/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day2/" class="title">算法练习--day2</a></p>
+                            <p class="item-date"><time datetime="2024-04-07T07:57:37.000Z" itemprop="datePublished">2024-04-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2024/04/03/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E2%80%94day1/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2024/04/03/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E2%80%94day1/01.jpg)" alt="算法练习—day1" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/LeetCode/">LeetCode</a></p>
+                            <p class="item-title"><a href="/2024/04/03/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0%E2%80%94day1/" class="title">算法练习—day1</a></p>
+                            <p class="item-date"><time datetime="2024-04-03T13:49:55.000Z" itemprop="datePublished">2024-04-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2023/11/11/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/test.png)" alt="测试文章" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2023/11/11/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/" class="title">测试文章</a></p>
+                            <p class="item-date"><time datetime="2023-11-11T14:16:15.000Z" itemprop="datePublished">2023-11-11</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">四月 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51777949?spm=1000.2115.3001.5343">CSDN</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2024 John Doe</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://red568.github.io/2024/04/07/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day2/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
