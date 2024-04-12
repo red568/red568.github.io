@@ -12,18 +12,20 @@
     
     <meta name="keywords" content="算法" />
     
-    <meta name="description" content="28. 实现 strStr()459.重复的子字符串">
+    <meta name="description" content="28. 实现 strStr() 分析： KMP 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152&#x2F;&#x2F; 减一实现&#x2F;&#x2F;j 和 next[j]可以互相表示&#x2F;&#x2F;数组中都必须+1  [j+1] &#x2F;&#x2F;长度减一 ：       j &#x3D;&#x3D; needle.length()-1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法练习-day8">
 <meta property="og:url" content="https://red568.github.io/2024/04/12/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day8/index.html">
 <meta property="og:site_name" content="Red">
-<meta property="og:description" content="28. 实现 strStr()459.重复的子字符串">
+<meta property="og:description" content="28. 实现 strStr() 分析： KMP 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152&#x2F;&#x2F; 减一实现&#x2F;&#x2F;j 和 next[j]可以互相表示&#x2F;&#x2F;数组中都必须+1  [j+1] &#x2F;&#x2F;长度减一 ：       j &#x3D;&#x3D; needle.length()-1">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://red568.github.io/2024/04/12/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day8/Snipaste_2024-04-12_14-59-43.png">
 <meta property="article:published_time" content="2024-04-11T17:04:40.000Z">
-<meta property="article:modified_time" content="2024-04-11T17:06:10.938Z">
+<meta property="article:modified_time" content="2024-04-12T07:53:49.848Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://red568.github.io/2024/04/12/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day8/Snipaste_2024-04-12_14-59-43.png">
     
 
     
@@ -180,7 +182,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2024/04/12/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day8/" class="article-date">
-     <time datetime="2024-04-11T17:06:10.938Z" itemprop="dateModified">2024-04-12</time>
+     <time datetime="2024-04-12T07:53:49.848Z" itemprop="dateModified">2024-04-12</time>
   </a>
 </div>
 
@@ -199,10 +201,10 @@
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">12</span>
+      <span class="post-count">672</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">1 分钟 </span>
+      <span class="post-count">3 分钟 </span>
    </div>
 
 
@@ -216,7 +218,20 @@
 
             
 
-            <h1 id="28-实现-strStr"><a href="#28-实现-strStr" class="headerlink" title="28. 实现 strStr()"></a>28. 实现 strStr()</h1><h1 id="459-重复的子字符串"><a href="#459-重复的子字符串" class="headerlink" title="459.重复的子字符串"></a>459.重复的子字符串</h1>
+            <h1 id="28-实现-strStr"><a href="#28-实现-strStr" class="headerlink" title="28. 实现 strStr()"></a>28. 实现 strStr()</h1><p><img src="/2024/04/12/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day8/Snipaste_2024-04-12_14-59-43.png"></p>
+<p>分析：</p>
+<p>KMP</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 减一实现</span></span><br><span class="line"><span class="comment">//j 和 next[j]可以互相表示</span></span><br><span class="line"><span class="comment">//数组中都必须+1  [j+1] </span></span><br><span class="line"><span class="comment">//长度减一 ：       j == needle.length()-1</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="comment">//获得next指针的逻辑</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">getNext</span><span class="params">(<span class="type">int</span>[] next, String s)</span>&#123;<span class="comment">//把next传参进去了</span></span><br><span class="line">        <span class="comment">//初始化，j是前缀的末尾，i是后缀的末尾</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">        next[<span class="number">0</span>] = j;</span><br><span class="line">        <span class="comment">//进行遍历，后缀慢慢后移遍历</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            <span class="comment">//i ，j指向元素大小不同的情况，回退</span></span><br><span class="line">            <span class="comment">//为什么要添加j&gt;=0的条件?-1的就不要再遍历了，-1是第一个元素到头了，避免死循环</span></span><br><span class="line">            <span class="keyword">while</span>(j &gt;= <span class="number">0</span> &amp;&amp; s.charAt(i) != s.charAt(j+<span class="number">1</span>))&#123;</span><br><span class="line">                j=next[j];<span class="comment">//要比较的前缀末尾 回退到 以 j为后缀指针的对称前缀的末尾</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(s.charAt(i) == s.charAt(j+<span class="number">1</span>))&#123;<span class="comment">//如果元素值相等</span></span><br><span class="line">                j++;<span class="comment">//前缀末尾指针后移（相同的前后缀长度+1）</span></span><br><span class="line">            &#125;</span><br><span class="line">            next[i] = j;<span class="comment">//记录前缀的长度-1，也就是相同的前后缀长度</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//业务逻辑</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">strStr</span><span class="params">(String haystack, String needle)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(needle.length()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//定义获取next数组</span></span><br><span class="line">        <span class="type">int</span>[] next = <span class="keyword">new</span> <span class="title class_">int</span>[needle.length()];</span><br><span class="line">        getNext(next, needle);</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="comment">//遍历，i指针指向文本串，j指向可以回退的模式串,注意这里从o开始</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; haystack.length(); i++)&#123;</span><br><span class="line">            <span class="comment">//对应位置不等，回退，回退逻辑与next数组中的相同</span></span><br><span class="line">            <span class="keyword">while</span>(j&gt;=<span class="number">0</span> &amp;&amp; haystack.charAt(i) != needle.charAt(j+<span class="number">1</span>))&#123;</span><br><span class="line">                j = next[j];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//对应位置相同，j后移</span></span><br><span class="line">            <span class="keyword">if</span>(haystack.charAt(i) == needle.charAt(j+<span class="number">1</span>))&#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//模式串到底则结束</span></span><br><span class="line">            <span class="keyword">if</span>(j == needle.length()-<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> (i-needle.length()+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="459-重复的子字符串"><a href="#459-重复的子字符串" class="headerlink" title="459.重复的子字符串"></a>459.重复的子字符串</h1><p><img src="/2024/04/12/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day8/Snipaste_2024-04-12_15-00-40.png"></p>
+<p>KMP字符串匹配：</p>
+<p><img src="/2024/04/12/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day8/Snipaste_2024-04-12_15-53-28.png"></p>
+<p>最长相等前后缀的长度为：next[len - 1] + 1&#x3D;&#x3D;》即图中，数字0-7的位置，</p>
+<p>重复字符串的长度 ： len - (next[len - 1] + 1)&#x3D;&#x3D;》即图中，-1的数组的长度</p>
+<p>如果len % (len - (next[len - 1] + 1)) &#x3D;&#x3D; 0 ，则说明数组的长度正好可以被 (数组长度-最长相等前后缀的长度) 整除 ，说明该字符串有重复的子字符串。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">repeatedSubstringPattern</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="comment">//判断空条件</span></span><br><span class="line">        <span class="keyword">if</span>(s==<span class="literal">null</span> ||s.equals(<span class="string">&quot;&quot;</span>))&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> s.length();</span><br><span class="line">        <span class="type">int</span> next[] = <span class="keyword">new</span> <span class="title class_">int</span>[len];</span><br><span class="line">        <span class="type">int</span> j=-<span class="number">1</span>;</span><br><span class="line">        next[<span class="number">0</span>] = -<span class="number">1</span>;</span><br><span class="line">        <span class="comment">//获得next数组的逻辑</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>; i&lt; s.length() ; i++)&#123;</span><br><span class="line">            <span class="keyword">while</span>(j&gt;=<span class="number">0</span> &amp;&amp; s.charAt(i) != s.charAt(j+<span class="number">1</span>))&#123;</span><br><span class="line">                j=next[j];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>( s.charAt(i) == s.charAt(j+<span class="number">1</span>))&#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            next[i] = j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//判断，注意必须next[len-1] &gt;= 0 ==&gt;</span></span><br><span class="line">        <span class="keyword">if</span>(next[len-<span class="number">1</span>] &gt;= <span class="number">0</span> &amp;&amp;len % (len - (next[len-<span class="number">1</span>]+<span class="number">1</span>))==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
         </div>
         <footer class="article-footer">
             
@@ -294,15 +309,18 @@
             "name": "John Doe"
         },
         "headline": "算法练习-day8",
-        "image": "https://red568.github.io",
+        "image": "https://red568.github.io/2024/04/12/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day8/Snipaste_2024-04-12_14-59-43.png",
         "keywords": "算法",
         "genre": "LeetCode",
         "datePublished": "2024-04-12",
         "dateCreated": "2024-04-12",
         "dateModified": "2024-04-12",
         "url": "https://red568.github.io/2024/04/12/算法练习-day8/",
-        "description": "28. 实现 strStr()459.重复的子字符串",
-        "wordCount": 13
+        "description": "28. 实现 strStr()
+分析：
+KMP
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152// 减一实现//j 和 next[j]可以互相表示//数组中都必须+1  [j+1] //长度减一 ：       j == needle.length()-1",
+        "wordCount": 1145
     }
 </script>
 
@@ -433,7 +451,7 @@
                             <a href="/2024/04/12/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day8/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/2024/04/12/%E7%AE%97%E6%B3%95%E7%BB%83%E4%B9%A0-day8/Snipaste_2024-04-12_14-59-43.png)" alt="算法练习-day8" class="thumbnail-image"></span>
     
     
 </a>
