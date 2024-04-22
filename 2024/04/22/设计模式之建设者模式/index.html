@@ -6,20 +6,23 @@
     
 
     
-    <title>about | Red</title>
+    <title>设计模式之建设者模式 | Red</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="关于我哈喽！欢迎来到我的世界~ 在这里，我会记录下自己的一些学习笔记、做题思路、复盘经历、个人感悟，这是我的小世界。 代码之路并不简单，难在坚持和钻研，我写这个博客的目的便是可以记录下自己的成长，并监督激励自己。 期待自己成为代码大佬的那天，那真是太酷啦！！！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="https://red568.github.io/about/index.html">
+    <meta name="keywords" content="设计模式" />
+    
+    <meta name="description" content="核心思想：  ​        将对象的构建过程分为多个步骤，为每一个步骤定义一个抽象的接口。具体的构建过程由实现了这些接口的具体类来实现。同时有一个指导者协调建造者的工作，按照一定的顺序来执行构建步骤，最终生成产品.  实际应用：  ​         建造者模式在现有的⼯具和库中也有着⼴泛的应⽤，⽐如JUnit 中的测试构建器 TestBuilder 就采⽤了建造者模式，⽤于构建测试对象。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式之建设者模式">
+<meta property="og:url" content="https://red568.github.io/2024/04/22/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%BB%BA%E8%AE%BE%E8%80%85%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Red">
-<meta property="og:description" content="关于我哈喽！欢迎来到我的世界~ 在这里，我会记录下自己的一些学习笔记、做题思路、复盘经历、个人感悟，这是我的小世界。 代码之路并不简单，难在坚持和钻研，我写这个博客的目的便是可以记录下自己的成长，并监督激励自己。 期待自己成为代码大佬的那天，那真是太酷啦！！！">
+<meta property="og:description" content="核心思想：  ​        将对象的构建过程分为多个步骤，为每一个步骤定义一个抽象的接口。具体的构建过程由实现了这些接口的具体类来实现。同时有一个指导者协调建造者的工作，按照一定的顺序来执行构建步骤，最终生成产品.  实际应用：  ​         建造者模式在现有的⼯具和库中也有着⼴泛的应⽤，⽐如JUnit 中的测试构建器 TestBuilder 就采⽤了建造者模式，⽤于构建测试对象。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-11T14:13:12.000Z">
-<meta property="article:modified_time" content="2024-04-03T14:42:42.072Z">
+<meta property="article:published_time" content="2024-04-22T03:28:09.000Z">
+<meta property="article:modified_time" content="2024-04-22T03:31:07.123Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary">
     
 
@@ -145,19 +148,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <em class="page-title-link" data-url="/about/index.html">about</em>
+    <a class="page-title-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="about-" class="article article-single article-type-about" itemscope itemprop="blogPost">
+                            <article id="post-设计模式之建设者模式" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        about
+        设计模式之建设者模式
         </h1>
     
 
@@ -168,16 +171,16 @@
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/about/index.html" class="article-date">
-       <time datetime="2023-11-11T14:13:12.000Z" itemprop="datePublished">2023-11-11</time>
+    <a href="/2024/04/22/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%BB%BA%E8%AE%BE%E8%80%85%E6%A8%A1%E5%BC%8F/" class="article-date">
+       <time datetime="2024-04-22T03:28:09.000Z" itemprop="datePublished">2024-04-22</time>
     </a>
   </div>
 
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/about/index.html" class="article-date">
-     <time datetime="2024-04-03T14:42:42.072Z" itemprop="dateModified">2024-04-03</time>
+  <a href="/2024/04/22/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%BB%BA%E8%AE%BE%E8%80%85%E6%A8%A1%E5%BC%8F/" class="article-date">
+     <time datetime="2024-04-22T03:31:07.123Z" itemprop="dateModified">2024-04-22</time>
   </a>
 </div>
 
@@ -185,16 +188,21 @@
                 
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a>
+    </div>
+
                 
 
                 
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">111</span>
+      <span class="post-count">541</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">1 分钟 </span>
+      <span class="post-count">2 分钟 </span>
    </div>
 
 
@@ -208,10 +216,31 @@
 
             
 
-            <h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><p>哈喽！欢迎来到我的世界~</p>
-<p>在这里，我会记录下自己的一些学习笔记、做题思路、复盘经历、个人感悟，这是我的小世界。</p>
-<p>代码之路并不简单，难在坚持和钻研，我写这个博客的目的便是可以记录下自己的成长，并监督激励自己。</p>
-<p>期待自己成为代码大佬的那天，那真是太酷啦！！！</p>
+            <ol>
+<li><strong>核心思想：</strong></li>
+</ol>
+<p>​        将对象的构建过程分为多个步骤，为每一个步骤定义一个抽象的接口。具体的构建过程由实现了这些接口的具体类来实现。同时有一个指导者协调建造者的工作，按照一定的顺序来执行构建步骤，最终生成产品.</p>
+<ol start="2">
+<li><strong>实际应用：</strong></li>
+</ol>
+<p>​         建造者模式在现有的⼯具和库中也有着⼴泛的应⽤，⽐如JUnit 中的测试构建器 TestBuilder 就采⽤了建造者模式，⽤于构建测试对象。  </p>
+<ol start="3">
+<li><p><strong>主要构成：</strong></p>
+<ol>
+<li><p>产品product：被构建的对象，可能有多个组成部分</p>
+</li>
+<li><p>抽象构造者Builder ，接口，定义构建产品各个部分的抽象接⼝和⼀个返回复杂产品的⽅法 getResult  </p>
+</li>
+<li><p>具体建造者 Concrete Builder ：实现抽象建造者接⼝，构建产品的各个组成部分，并提供⼀个⽅法返回最终的产品  </p>
+</li>
+<li><p>指导者 Director ：调⽤具体建造者的⽅法，按照⼀定的顺序或逻辑来构建产品</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>![](下载 (1).png)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="comment">//产品类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bike</span>&#123;</span><br><span class="line">    String frame;</span><br><span class="line">    String tires;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setFrame</span><span class="params">(String frame)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.frame = frame;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setTires</span><span class="params">(String tires)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.tires=tires;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getFrame</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.frame;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getTires</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.tires;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//抽象建设者</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">AbstractBuilder</span>&#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">buildFrame</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">buildTire</span><span class="params">()</span>;</span><br><span class="line">    Bike <span class="title function_">getBike</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//具体建设者1</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MountainBuilder</span> <span class="keyword">implements</span> <span class="title class_">AbstractBuilder</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Bike bike;</span><br><span class="line">    <span class="comment">//构造器</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MountainBuilder</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.bike=<span class="keyword">new</span> <span class="title class_">Bike</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">buildFrame</span><span class="params">()</span>&#123;</span><br><span class="line">        bike.setFrame(<span class="string">&quot;Aluminum Frame&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">buildTire</span><span class="params">()</span>&#123;</span><br><span class="line">        bike.setTires(<span class="string">&quot;Knobby Tires&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Bike <span class="title function_">getBike</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> bike;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//具体建设者2</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">RoadBuilder</span> <span class="keyword">implements</span> <span class="title class_">AbstractBuilder</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Bike bike;</span><br><span class="line">    <span class="comment">//构造器</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">RoadBuilder</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.bike=<span class="keyword">new</span> <span class="title class_">Bike</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">buildFrame</span><span class="params">()</span>&#123;</span><br><span class="line">        bike.setFrame(<span class="string">&quot;Carbon Frame&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">buildTire</span><span class="params">()</span>&#123;</span><br><span class="line">        bike.setTires(<span class="string">&quot;Slim Tires&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Bike <span class="title function_">getBike</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> bike;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//指导者</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Director</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> Bike <span class="title function_">BikeBuilder</span><span class="params">(AbstractBuilder builder)</span>&#123;</span><br><span class="line">        builder.buildFrame();</span><br><span class="line">        builder.buildTire();</span><br><span class="line">        <span class="keyword">return</span> builder.getBike();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Main</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String arg[])</span>&#123;</span><br><span class="line">        Director director=<span class="keyword">new</span> <span class="title class_">Director</span>();</span><br><span class="line">        Bike bike=<span class="literal">null</span>;</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">in</span> <span class="operator">=</span><span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="type">int</span> n=in.nextInt();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            String str=in.next();</span><br><span class="line">            <span class="keyword">if</span>(<span class="string">&quot;mountain&quot;</span>.equals(str))&#123;</span><br><span class="line">                bike=director.BikeBuilder(<span class="keyword">new</span> <span class="title class_">MountainBuilder</span>());</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="string">&quot;road&quot;</span>.equals(str))&#123;</span><br><span class="line">                bike=director.BikeBuilder(<span class="keyword">new</span> <span class="title class_">RoadBuilder</span>());</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(bike.getFrame()+<span class="string">&#x27; &#x27;</span>+bike.getTires());</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         <footer class="article-footer">
@@ -219,7 +248,7 @@
 
 
 
-    <a data-url="https://red568.github.io/about/index.html" data-id="clugh7j6y00001gv570ufgivt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://red568.github.io/2024/04/22/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%BB%BA%E8%AE%BE%E8%80%85%E6%A8%A1%E5%BC%8F/" data-id="clvaeh6730000lkv51s0ch5rq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -289,20 +318,23 @@
             "@type": "Person",
             "name": "John Doe"
         },
-        "headline": "about",
+        "headline": "设计模式之建设者模式",
         "image": "https://red568.github.io",
-        
-        
-        "datePublished": "2023-11-11",
-        "dateCreated": "2023-11-11",
-        "dateModified": "2024-04-03",
-        "url": "https://red568.github.io/about/index.html",
-        "description": "关于我哈喽！欢迎来到我的世界~
-在这里，我会记录下自己的一些学习笔记、做题思路、复盘经历、个人感悟，这是我的小世界。
-代码之路并不简单，难在坚持和钻研，我写这个博客的目的便是可以记录下自己的成长，并监督激励自己。
-期待自己成为代码大佬的那天，那真是太酷啦！！！
-",
-        "wordCount": 5
+        "keywords": "设计模式",
+        "genre": "设计模式",
+        "datePublished": "2024-04-22",
+        "dateCreated": "2024-04-22",
+        "dateModified": "2024-04-22",
+        "url": "https://red568.github.io/2024/04/22/设计模式之建设者模式/",
+        "description": "
+核心思想：
+
+​        将对象的构建过程分为多个步骤，为每一个步骤定义一个抽象的接口。具体的构建过程由实现了这些接口的具体类来实现。同时有一个指导者协调建造者的工作，按照一定的顺序来执行构建步骤，最终生成产品.
+
+实际应用：
+
+​         建造者模式在现有的⼯具和库中也有着⼴泛的应⽤，⽐如JUnit 中的测试构建器 TestBuilder 就采⽤了建造者模式，⽤于构建测试对象。 ",
+        "wordCount": 902
     }
 </script>
 
@@ -371,6 +403,19 @@
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2024/04/21/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">设计模式之抽象工厂模式</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -572,7 +617,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://red568.github.io/about/index.html';
+    var disqus_url = 'https://red568.github.io/2024/04/22/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%BB%BA%E8%AE%BE%E8%80%85%E6%A8%A1%E5%BC%8F/';
     
     (function() {
     var dsq = document.createElement('script');
